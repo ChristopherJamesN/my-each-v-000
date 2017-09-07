@@ -1,8 +1,13 @@
 def my_each (array)
-  i=0
-  while i<array.length do
-    yield(i)
-    i+=1
+  if block_given?
+    i=0
+    while i<array.length do
+      yield(i)
+      i+=1
+    end
+
+  else
+    puts "No block was given!"
   end
   array
 end
